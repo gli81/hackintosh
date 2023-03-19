@@ -1,5 +1,0 @@
-SSDTTime：
-https://github.com/corpnewt/SSDTTime
-
-IASL：
-https://acpica.org/downloads
