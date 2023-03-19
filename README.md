@@ -42,9 +42,9 @@
 
 ## 参考资料
 
-- OpenCore 官方指南 https://dortania.github.io/OpenCore-Install-Guide
-- 司波图的视频 https://www.bilibili.com/video/BV1hA411t7dr/, https://www.youtube.com/watch?v=Lu6Kmz5aDhY
-- 大头蔡Cass的视频 https://space.bilibili.com/16323318/channel/collectiondetail?sid=296068, https://www.youtube.com/playlist?list=PLdKp3l7lXf-Ud-WGhrWn9cyPXpgcygUhd
+- [OpenCore 官方指南](https://dortania.github.io/OpenCore-Install-Guide)
+- 司波图的视频：[b站](https://www.bilibili.com/video/BV1hA411t7dr/)，[YouTube](https://www.youtube.com/watch?v=Lu6Kmz5aDhY)
+- 大头蔡Cass的视频：[b站](https://space.bilibili.com/16323318/channel/collectiondetail?sid=296068)，[YouTube](https://www.youtube.com/playlist?list=PLdKp3l7lXf-Ud-WGhrWn9cyPXpgcygUhd)
 
 ---
 
@@ -75,7 +75,7 @@
 
 ## Reference
 
-- OpenCore guide https://dortania.github.io/OpenCore-Install-Guide
-- Videos by 司波图 https://www.bilibili.com/video/BV1hA411t7dr/, https://www.youtube.com/watch?v=Lu6Kmz5aDhY
-- Videos by 大头蔡Cass https://space.bilibili.com/16323318/channel/collectiondetail?sid=296068, https://www.youtube.com/playlist?list=PLdKp3l7lXf-Ud-WGhrWn9cyPXpgcygUhd
+- [OpenCore guide](https://dortania.github.io/OpenCore-Install-Guide)
+- Videos by 司波图 on [bilibili](https://www.bilibili.com/video/BV1hA411t7dr/), and [Youtube](https://www.youtube.com/watch?v=Lu6Kmz5aDhY)
+- Videos by 大头蔡Cass on [bilibili](https://space.bilibili.com/16323318/channel/collectiondetail?sid=296068), and [Youtube](https://www.youtube.com/playlist?list=PLdKp3l7lXf-Ud-WGhrWn9cyPXpgcygUhd)
 
