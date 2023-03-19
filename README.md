@@ -2,13 +2,13 @@
 
 ## 目录
 
-- 中文版
+- [中文版](#工具)
   - 工具
   - 镜像1：E3v3 + RX570显卡ITX主机
     - 概述+硬件介绍
     - 更新记录
   - 参考
-- English
+- [English](#Tools)
   - Tools
   - EFI1: E3v3 + RX570 itx build
   - References
