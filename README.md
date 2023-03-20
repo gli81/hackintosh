@@ -19,6 +19,7 @@
 
 - [OpenCore](https://github.com/acidanthera/OpenCorePkg)
 - [SSDTTime](https://github.com/corpnewt/SSDTTime)
+- [USB mapping tools](https://github.com/USBToolBox/tool)
 - [IASL] 
 
 ## E3v3的EFI
@@ -38,7 +39,11 @@
 #### 2023-03-20: 开始根据教程进行EFI配置
 
 - 通过OpenCore下载适合的MacOS镜像
-- 通过SSDTTime获取本机的DSDT.asl
+- 通过SSDTTime获取本机的`DSDT.asl`
+
+#### 2023-03-21
+
+- 从OpenCore指南里下载适配硬件的`kext`
 
 ## 参考资料
 
@@ -52,6 +57,7 @@
 
 - [OpenCore](https://github.com/acidanthera/OpenCorePkg)
 - [SSDTTime](https://github.com/corpnewt/SSDTTime)
+- [USB mapping tools](https://github.com/USBToolBox/tool)
 - [IASL] 
 
 ## Intel Xeon E3 1276v3
@@ -71,7 +77,11 @@
 #### 2023-03-20: Start to configure my EFI
 
 - Download MacOS image using OpenCore
-- Fetch DSDT.asl file using SSDTTime
+- Fetch `DSDT.asl` file using SSDTTime
+
+#### 2023-03-21
+
+- Download `kext` files from OpenCore guide
 
 ## Reference
 
