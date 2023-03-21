@@ -87,7 +87,7 @@
 
 - Download `kext` files from OpenCore guide
 - Create USB mapping `UTBMap.kext` using USB mapping tool, and check if each USB controller has more than 15 lanes? using ProperTree
-- Fetch `SSDT-EC` and `SSDT-PLUG` using SSDTTime
+- Fetch `SSDT-EC.aml` and `SSDT-PLUG.aml` using SSDTTime
 
 ## Reference
 
