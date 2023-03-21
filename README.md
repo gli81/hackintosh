@@ -20,7 +20,8 @@
 - [OpenCore](https://github.com/acidanthera/OpenCorePkg)
 - [SSDTTime](https://github.com/corpnewt/SSDTTime)
 - [USB mapping tools](https://github.com/USBToolBox/tool)
-- [IASL] 
+- [ProperTree](https://github.com/corpnewt/ProperTree)
+- ~~[IASL](https://acpica.org/)~~
 
 ## E3v3的EFI
 
@@ -44,6 +45,8 @@
 #### 2023-03-21
 
 - 从OpenCore指南里下载适配硬件的`kext`
+- 使用USB mapping tool创建本机的USB映射，生成`UTBMap.kext`，并用ProperTree检查单个控制器是否超过15条通道
+- 使用SSDTTime生成`SSDT-EC,aml`和`SSDT-PLUG.aml`
 
 ## 参考资料
 
@@ -58,7 +61,8 @@
 - [OpenCore](https://github.com/acidanthera/OpenCorePkg)
 - [SSDTTime](https://github.com/corpnewt/SSDTTime)
 - [USB mapping tools](https://github.com/USBToolBox/tool)
-- [IASL] 
+- [ProperTree](https://github.com/corpnewt/ProperTree)
+- ~~[IASL](https://acpica.org/)~~
 
 ## Intel Xeon E3 1276v3
 
@@ -82,6 +86,8 @@
 #### 2023-03-21
 
 - Download `kext` files from OpenCore guide
+- Create USB mapping `UTBMap.kext` using USB mapping tool, and check if each USB controller has more than 15 lanes? using ProperTree
+- Fetch `SSDT-EC` and `SSDT-PLUG` using SSDTTime
 
 ## Reference
 
