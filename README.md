@@ -29,7 +29,8 @@
 - [balenaEtcher]([balenaEtcher - Flash OS images to SD cards & USB drives](https://www.balena.io/etcher))
 - [OpenCore Scanity Checker](https://opencore.slowgeek.com/)
 - [OpenCore Auxilliary Tool](https://github.com/ic005k/OCAuxiliaryTools)
-- [DiskGenius]()
+- [DiskGenius](https://www.diskgenius.cn/)
+- [sysin](https://sysin.org/)
 - ~~[IASL](https://acpica.org/)~~
 
 ## E3v3的EFI
@@ -49,20 +50,25 @@
 #### 2023-03-20: 开始根据教程进行EFI配置
 
 - 通过OpenCore下载适合的MacOS镜像
-- 通过SSDTTime获取本机的`DSDT.asl`
+- 通过SSDTTime获取本机的`DSDT.aml`
 
 #### 2023-03-21
 
 - 从OpenCore指南里下载适配硬件的`kext`
 - 使用USB mapping tool创建本机的USB映射，生成`UTBMap.kext`，并用ProperTree检查单个控制器是否超过15条通道
-- 使用SSDTTime生成`SSDT-EC.asl`和`SSDT-PLUG.asl`
+- 使用SSDTTime生成`SSDT-EC.aml`和`SSDT-PLUG.aml`
 - 调整`config.plist`
-- 使用OpenCore指南提到的在u盘根目录放镜像，引导程序找不到镜像
-- 使用Etcher烧录镜像到u盘，尝试安装Monterey，跑一会码后失败，进入Windows
+- 根据OpenCore指南将`Monterey 12.6.3`的BaseSystem放到u盘根目录，引导程序找不到镜像
+- 使用Etcher烧录`Monterey 12.6.3`镜像到u盘，用DiskGenius将efi拷贝到u盘efi分区；尝试安装Monterey，跑一会码后失败，进入Windows
+- 使用Etcher烧录`Big Sur 11.7.3 (20G1116)`镜像到u盘，没有efi分区:D
 
 #### 2023-03-22
 
-- 从
+- 从`sysin.org`下载`Big Sur 11.7.3 (20G1116)`镜像并使用Etcher烧录到u盘，拷贝OC efi到efi文件夹下，成功安装![](Z:\Screen Shot 2023-03-22 at 3.00.27 AM.png)
+
+### 问题
+
+
 
 ## 参考资料
 
@@ -79,6 +85,11 @@
 - [USB mapping tools](https://github.com/USBToolBox/tool)
 - [ProperTree](https://github.com/corpnewt/ProperTree)
 - [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS)
+- [balenaEtcher]([balenaEtcher - Flash OS images to SD cards & USB drives](https://www.balena.io/etcher))
+- [OpenCore Scanity Checker](https://opencore.slowgeek.com/)
+- [OpenCore Auxilliary Tool](https://github.com/ic005k/OCAuxiliaryTools)
+- [DiskGenius](https://www.diskgenius.cn/)
+- [sysin](https://sysin.org/)
 - ~~[IASL](https://acpica.org/)~~
 
 ## Intel Xeon E3 1276v3
@@ -98,13 +109,15 @@
 #### 2023-03-20: Start to configure my EFI
 
 - Download MacOS image using OpenCore
-- Fetch `DSDT.asl` file using SSDTTime
+- Fetch `DSDT.aml` file using SSDTTime
 
 #### 2023-03-21
 
 - Download `kext` files from OpenCore guide
 - Create USB mapping `UTBMap.kext` using USB mapping tool, and check if each USB controller has more than 15 lanes? using ProperTree
-- Fetch `SSDT-EC.asl` and `SSDT-PLUG.asl` using SSDTTime
+- Fetch `SSDT-EC.aml` and `SSDT-PLUG.aml` using SSDTTime
+- Configure `config.plist`
+- 
 
 ## Reference
 
