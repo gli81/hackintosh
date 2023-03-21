@@ -64,7 +64,7 @@
 
 #### 2023-03-22
 
-- 从`sysin.org`下载`Big Sur 11.7.3 (20G1116)`镜像并使用Etcher烧录到u盘，拷贝OC efi到efi文件夹下，成功安装![](Z:\Screen Shot 2023-03-22 at 3.00.27 AM.png)
+- 从`sysin.org`下载`Big Sur 11.7.3 (20G1116)`镜像并使用Etcher烧录到u盘，拷贝OC efi到efi文件夹下，成功安装![About this Mac](./resources/e3rx570.png)
 
 ### 问题
 
