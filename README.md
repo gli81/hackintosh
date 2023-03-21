@@ -25,6 +25,11 @@
 - [SSDTTime](https://github.com/corpnewt/SSDTTime)
 - [USB mapping tools](https://github.com/USBToolBox/tool)
 - [ProperTree](https://github.com/corpnewt/ProperTree)
+- [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS)
+- [balenaEtcher]([balenaEtcher - Flash OS images to SD cards & USB drives](https://www.balena.io/etcher))
+- [OpenCore Scanity Checker](https://opencore.slowgeek.com/)
+- [OpenCore Auxilliary Tool](https://github.com/ic005k/OCAuxiliaryTools)
+- [DiskGenius]()
 - ~~[IASL](https://acpica.org/)~~
 
 ## E3v3的EFI
@@ -50,7 +55,14 @@
 
 - 从OpenCore指南里下载适配硬件的`kext`
 - 使用USB mapping tool创建本机的USB映射，生成`UTBMap.kext`，并用ProperTree检查单个控制器是否超过15条通道
-- 使用SSDTTime生成`SSDT-EC.aml`和`SSDT-PLUG.aml`
+- 使用SSDTTime生成`SSDT-EC.asl`和`SSDT-PLUG.asl`
+- 调整`config.plist`
+- 使用OpenCore指南提到的在u盘根目录放镜像，引导程序找不到镜像
+- 使用Etcher烧录镜像到u盘，尝试安装Monterey，跑一会码后失败，进入Windows
+
+#### 2023-03-22
+
+- 从
 
 ## 参考资料
 
@@ -66,6 +78,7 @@
 - [SSDTTime](https://github.com/corpnewt/SSDTTime)
 - [USB mapping tools](https://github.com/USBToolBox/tool)
 - [ProperTree](https://github.com/corpnewt/ProperTree)
+- [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS)
 - ~~[IASL](https://acpica.org/)~~
 
 ## Intel Xeon E3 1276v3
@@ -91,7 +104,7 @@
 
 - Download `kext` files from OpenCore guide
 - Create USB mapping `UTBMap.kext` using USB mapping tool, and check if each USB controller has more than 15 lanes? using ProperTree
-- Fetch `SSDT-EC.aml` and `SSDT-PLUG.aml` using SSDTTime
+- Fetch `SSDT-EC.asl` and `SSDT-PLUG.asl` using SSDTTime
 
 ## Reference
 
