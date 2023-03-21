@@ -26,7 +26,7 @@
 - [USB mapping tools](https://github.com/USBToolBox/tool)
 - [ProperTree](https://github.com/corpnewt/ProperTree)
 - [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS)
-- [balenaEtcher]([balenaEtcher - Flash OS images to SD cards & USB drives](https://www.balena.io/etcher))
+- [balenaEtcher](https://www.balena.io/etcher)
 - [OpenCore Scanity Checker](https://opencore.slowgeek.com/)
 - [OpenCore Auxilliary Tool](https://github.com/ic005k/OCAuxiliaryTools)
 - [DiskGenius](https://www.diskgenius.cn/)
@@ -57,18 +57,21 @@
 - 从OpenCore指南里下载适配硬件的`kext`
 - 使用USB mapping tool创建本机的USB映射，生成`UTBMap.kext`，并用ProperTree检查单个控制器是否超过15条通道
 - 使用SSDTTime生成`SSDT-EC.aml`和`SSDT-PLUG.aml`
-- 调整`config.plist`
-- 根据OpenCore指南将`Monterey 12.6.3`的BaseSystem放到u盘根目录，引导程序找不到镜像
-- 使用Etcher烧录`Monterey 12.6.3`镜像到u盘，用DiskGenius将efi拷贝到u盘efi分区；尝试安装Monterey，跑一会码后失败，进入Windows
+- 使用ProperTree调整`config.plist`
+  - 
+- 根据OpenCore指南将`Monterey 12.6.3`的`BaseSystem.dmg`和`BaseSystem.chunklist`放到u盘根目录中的`com.apple.recovery.boot`路径下，引导程序找不到镜像
+- 使用Etcher烧录`Monterey 12.6.3`镜像到u盘，在`config.plist`中将机型设置为`iMac17,1`；用DiskGenius将efi拷贝到u盘efi分区；尝试安装Monterey，跑码一会后失败，进入Windows
 - 使用Etcher烧录`Big Sur 11.7.3 (20G1116)`镜像到u盘，没有efi分区:D
 
 #### 2023-03-22
 
-- 从`sysin.org`下载`Big Sur 11.7.3 (20G1116)`镜像并使用Etcher烧录到u盘，拷贝OC efi到efi文件夹下，成功安装![About this Mac](./resources/e3rx570.png)
+- 从`sysin.org`下载`Big Sur 11.7.3 (20G1116)`镜像并使用Etcher烧录到u盘，用DiskGenius拷贝efi到efi文件夹下，成功安装![About this Mac](./resources/e3rx570.png)
 
 ### 问题
 
-
+- 桌面左上角出现一小块显示问题
+- 为了解决上面的问题，直接重启了，于是会被直接引导到Windows（因为没有用OC引导替换原来的引导）
+- 但👴想摆烂几天，过几天再修😝
 
 ## 参考资料
 
@@ -84,13 +87,13 @@
 - [SSDTTime](https://github.com/corpnewt/SSDTTime)
 - [USB mapping tools](https://github.com/USBToolBox/tool)
 - [ProperTree](https://github.com/corpnewt/ProperTree)
-- [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS)
-- [balenaEtcher]([balenaEtcher - Flash OS images to SD cards & USB drives](https://www.balena.io/etcher))
-- [OpenCore Scanity Checker](https://opencore.slowgeek.com/)
-- [OpenCore Auxilliary Tool](https://github.com/ic005k/OCAuxiliaryTools)
-- [DiskGenius](https://www.diskgenius.cn/)
-- [sysin](https://sysin.org/)
-- ~~[IASL](https://acpica.org/)~~
+- [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS) - generates fake Mac serial number
+- [balenaEtcher](https://www.balena.io/etcher) - moves MacOS image to USB stick
+- [OpenCore Scanity Checker](https://opencore.slowgeek.com/) - checks your mental health status
+- [OpenCore Auxilliary Tool](https://github.com/ic005k/OCAuxiliaryTools) - does ProperTree and GenSMBIOS things, with a better GUI
+- [DiskGenius](https://www.diskgenius.cn/) - moves your finished files to the efi sector in the USB stick
+- [sysin](https://sysin.org/) - provides MacOS images
+- ~~[IASL](https://acpica.org/)~~ - decompiles `.aml` file
 
 ## Intel Xeon E3 1276v3
 
