@@ -7,10 +7,14 @@
   - 镜像1：E3v3 + RX570显卡ITX主机
     - 概述+硬件介绍
     - 更新记录
+    - 测试
   - 参考
 - [English](#Tools)
   - Tools
   - EFI1: E3v3 + RX570 itx build
+    - Intro
+    - Updates
+    - Tests
   - References
 
 ---
@@ -46,7 +50,7 @@
 
 - 从OpenCore指南里下载适配硬件的`kext`
 - 使用USB mapping tool创建本机的USB映射，生成`UTBMap.kext`，并用ProperTree检查单个控制器是否超过15条通道
-- 使用SSDTTime生成`SSDT-EC,aml`和`SSDT-PLUG.aml`
+- 使用SSDTTime生成`SSDT-EC.aml`和`SSDT-PLUG.aml`
 
 ## 参考资料
 
