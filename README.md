@@ -139,6 +139,18 @@
 - Configure `config.plist`
 - 
 
+#### Tests
+
+- Ethernet - ✅
+- WLAN - wifi works, bt doesn't
+  - WiFi - ✅
+  - AirDrop - ❌
+  - Handoff - ❌
+- Audio - ✅
+- Hibernate - ❌
+
+### 
+
 ## Reference
 
 - [OpenCore guide](https://dortania.github.io/OpenCore-Install-Guide)
