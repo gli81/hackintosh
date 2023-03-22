@@ -8,6 +8,7 @@
     - 概述+硬件介绍
     - 更新记录
     - 测试
+    - 问题
   - 参考
 - [English](#Tools)
   - Tools
@@ -59,19 +60,35 @@
 - 使用SSDTTime生成`SSDT-EC.aml`和`SSDT-PLUG.aml`
 - 使用ProperTree调整`config.plist`
   - 
-- 根据OpenCore指南将`Monterey 12.6.3`的`BaseSystem.dmg`和`BaseSystem.chunklist`放到u盘根目录中的`com.apple.recovery.boot`路径下，引导程序找不到镜像
-- 使用Etcher烧录`Monterey 12.6.3`镜像到u盘，在`config.plist`中将机型设置为`iMac17,1`；用DiskGenius将efi拷贝到u盘efi分区；尝试安装Monterey，跑码一会后失败，进入Windows
+- 根据OpenCore指南将`Monterey 12.6.3 (21G419)`的`BaseSystem.dmg`和`BaseSystem.chunklist`放到u盘根目录中的`com.apple.recovery.boot`路径下，引导程序找不到镜像
+- 使用Etcher烧录`Monterey 12.6.3 (21G419)`镜像到u盘，在`config.plist`中将机型设置为`iMac17,1`；用DiskGenius将efi拷贝到u盘efi分区；尝试安装Monterey，跑码一会后失败，进入Windows
 - 使用Etcher烧录`Big Sur 11.7.3 (20G1116)`镜像到u盘，没有efi分区:D
 
 #### 2023-03-22
 
 - 从`sysin.org`下载`Big Sur 11.7.3 (20G1116)`镜像并使用Etcher烧录到u盘，用DiskGenius拷贝efi到efi文件夹下，成功安装![About this Mac](./resources/e3rx570.png)
 
+### 测试
+
+- 网卡 - ✅
+- 无线网卡 - wifi正常使用，蓝牙不能使用
+  - wifi - ✅
+  - AirDrop - ❌
+  - 接力 - ❌
+- 声卡 - ✅
+- 睡眠 - ❌
+
 ### 问题
 
-- 桌面左上角出现一小块显示问题
-- 为了解决上面的问题，直接重启了，于是会被直接引导到Windows（因为没有用OC引导替换原来的引导）
-- 但👴想摆烂几天，过几天再修😝
+- ~~2023-03-22 - 桌面左上角出现一小块显示问题~~`换个桌面背景解决，原图片还是不能正常显示`
+- ~~2023-03-22 - 为了解决上面的问题，直接重启了，于是会被直接引导到Windows（因为没有用OC引导替换原来的引导）~~`通过OpenCore Configurator将u盘efi分区覆盖硬盘efi分区，拔掉u盘后也能正常引导OC`
+- ~~2023-03-22 - 拔掉u盘后进入OC，但OC不能引导Windows~~`通过Windows镜像把Windows引导恢复了，又不能进入Mac啦，需要解决OC不能引导Windows的问题`
+- ~~2023-03-22 - 声卡暂时不能驱动~~`可以驱动`
+- 2023-03-22 - 有时拖动窗口时会导致死机重启
+- 2023-03-22 - 视频播放偶尔卡顿
+- 2023-03-22 - 副屏连接核显输出，系统加载前和刚关机时会大花屏；副屏最高选择60Hz刷新率
+- 2023-03-22 - USB定制可能还不完善
+- 2023-03-22 - 但👴只想摆烂，过几天再修😝
 
 ## 参考资料
 
