@@ -82,7 +82,7 @@
   - AirDrop - ❌
   - 接力 - ❌
 - 声卡 - ✅
-- 睡眠 - ❌
+- 睡眠 - ✅
 
 ### 问题
 
@@ -155,7 +155,7 @@
   - AirDrop - ❌
   - Handoff - ❌
 - Audio - ✅
-- Hibernate - ❌
+- Hibernate - ✅
 
 ### 
 
