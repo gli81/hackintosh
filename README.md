@@ -60,6 +60,7 @@
 10. 选择一个Picker或自定义一组Picker
 11. 定制编译`SSDT`
 12. 原生电源管理
+13. 换到OpenCore Release版
 
 ### 测试
 
@@ -85,7 +86,8 @@
 - ~~2023-03-22 - 但👴只想摆烂，过几天再修😝~~
 - ~~2023-07-30 - 需要测试睡眠功能~~ `可以正常睡眠唤醒`
 - 2024-07-28 - 自定义picker不能使用
-- 2024-07-28 - 不确定是否需要`SSDT-HEPT`，根据OpenCore Guid， Haswell平台是不需要解决IRQ冲突问题的
+- 2024-07-28 - 不确定是否需要`SSDT-HEPT`，根据OpenCore Guide， Haswell平台是不需要解决IRQ冲突问题的
+- 2024-07-28 - `AppleALCU.kext`为`AppleALC.kext`的精简版，可以移除
 
 ### 更新记录
 
@@ -98,8 +100,8 @@
 
 - 从OpenCore指南里下载适配硬件的`kext`
 - 使用USB mapping tool创建本机的USB映射，生成`UTBMap.kext`，并用ProperTree检查单个控制器是否超过15条通道
-- 使用SSDTTime生成`SSDT-EC.aml`和`SSDT-PLUG.aml`
-- 使用ProperTree调整`config.plist`
+- 使用`SSDTTime`生成`SSDT-EC.aml`和`SSDT-PLUG.aml`
+- 使用`ProperTree`调整`config.plist`
   - 
 - 根据OpenCore指南将`Monterey 12.6.3 (21G419)`的`BaseSystem.dmg`和`BaseSystem.chunklist`放到u盘根目录中的`com.apple.recovery.boot`路径下，引导程序找不到镜像
 - 使用`Etcher`烧录`Monterey 12.6.3 (21G419)`镜像到u盘，在`config.plist`中将机型设置为`iMac17,1`；用`DiskGenius`将efi拷贝到u盘efi分区；尝试安装`Monterey`，跑码一会后失败，进入Windows
