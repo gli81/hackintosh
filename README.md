@@ -46,6 +46,47 @@
 | 无线网卡 |                  博通 BCM94360HMB                   |
 | 硬盘     |                    致钛 SC001 1T                    |
 
+### 步骤
+
+1. 根据OpenCore Debug版`OC`文件夹创建EFI目录
+2. 使用`USB mapping tools`获取USB map
+3. 使用`SSDTTime`获取`DSDT`和`SSDT-EC`, `SSDT-HEPT`, `SSDT-PLUGIN`
+4. 配置`Drivers`目录
+5. 配置`Kexts`目录
+6. 配置`config.plist`
+7. 安装
+8. 安装成功后检查声卡（并调整）
+9. 使用`Hackintool`完善USB定制
+10. 选择一个Picker或自定义一组Picker
+11. 定制编译`SSDT`
+12. 原生电源管理
+
+### 测试
+
+- 网卡 - 11✅13✅
+- 无线网卡
+  - wifi - 11✅13✅
+  - AirDrop - 11❌13✅
+  - 接力 - 11❌13✅
+- 声卡 - 11✅13✅
+- 睡眠 - 11✅13✅
+
+### 问题
+
+- ~~2023-03-22 - 桌面左上角出现一小块显示问题~~`换个桌面背景解决，原图片还是不能正常显示`
+- ~~2023-03-22 - 为了解决上面的问题，直接重启了，于是会被直接引导到Windows（因为没有用OC引导替换原来的引导）~~`通过OpenCore Configurator将u盘efi分区覆盖硬盘efi分区，拔掉u盘后也能正常引导OC`
+- ~~2023-03-22 - 拔掉u盘后进入OC，但OC不能引导Windows~~<del>`通过Windows镜像把Windows引导恢复了，又不能进入Mac啦，需要解决OC不能引导Windows的问题`</del>
+- ~~2023-03-22 - OC不能引导Windows~~`使用EasyUEFI在Windows引导分区创建OC引导项，可以从硬盘引导OC再引导Windows和MacOS了，暂时不确定有没有更好的方法`
+- ~~2023-03-22 - 声卡暂时不能驱动~~`可以驱动`
+- 2023-03-22 - 有时拖动窗口时会导致死机重启
+- 2023-03-22 - 视频播放偶尔卡顿
+- 2023-03-22 - 副屏连接核显输出，系统加载前和刚关机时会大花屏；副屏最高选择60Hz刷新率
+- <del>2023-03-22 - USB定制可能还不完善 2023-07-30 - 需要参考大头蔡的视频完善USB定制</del>del>
+- ~~2023-03-22 - 但👴只想摆烂，过几天再修😝~~
+- ~~2023-07-30 - 需要测试睡眠功能~~ `可以正常睡眠唤醒`
+- 2024-07-28 - 自定义picker不能使用
+- 2024-07-28 - 不确定是否需要`SSDT-HEPT`，根据OpenCore Guid， Haswell平台是不需要解决IRQ冲突问题的
+
 ### 更新记录
 
 #### 2023-03-20: 开始根据教程进行EFI配置
@@ -61,7 +102,7 @@
 - 使用ProperTree调整`config.plist`
   - 
 - 根据OpenCore指南将`Monterey 12.6.3 (21G419)`的`BaseSystem.dmg`和`BaseSystem.chunklist`放到u盘根目录中的`com.apple.recovery.boot`路径下，引导程序找不到镜像
-- 使用Etcher烧录`Monterey 12.6.3 (21G419)`镜像到u盘，在`config.plist`中将机型设置为`iMac17,1`；用DiskGenius将efi拷贝到u盘efi分区；尝试安装Monterey，跑码一会后失败，进入Windows
+- 使用`Etcher`烧录`Monterey 12.6.3 (21G419)`镜像到u盘，在`config.plist`中将机型设置为`iMac17,1`；用`DiskGenius`将efi拷贝到u盘efi分区；尝试安装`Monterey`，跑码一会后失败，进入Windows
 - 使用Etcher烧录`Big Sur 11.7.3 (20G1116)`镜像到u盘，没有efi分区:D
 
 #### 2023-03-22
@@ -72,31 +113,13 @@
 
 - 从`sysin.org`下载的`Big Sur 11.7.8 (20G1351)`iso镜像不能通过Etcher烧录到u盘，通过Mac系统App Store下载镜像并使用`sudo /Applications/Install\ macOS\ Big\ Sur.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume`命令制作了`Big Sur 11.7.9 (20G1426)`的安装u盘
 - 安装`Big Sur 11.7.9 (20G1426)`
-- 使用EasyUEFI设置从硬盘双系统启动，教程参见[bilibili wxlei_雷 的视频](https://www.bilibili.com/video/BV1QV4y1K7WC)
+- 使用`EasyUEFI`设置从硬盘双系统启动，教程参见[bilibili wxlei_雷 的视频](https://www.bilibili.com/video/BV1QV4y1K7WC)
 
-### 测试
+#### 2024-07-26~2024-07-28
 
-- 网卡 - ✅
-- 无线网卡 - wifi正常使用，蓝牙不能使用
-  - wifi - ✅
-  - AirDrop - ❌
-  - 接力 - ❌
-- 声卡 - ✅
-- 睡眠 - ✅
+- 重复USB Mapping，获取`DSDT`和`SSDT`，配置EFI的过程
 
-### 问题
-
-- ~~2023-03-22 - 桌面左上角出现一小块显示问题~~`换个桌面背景解决，原图片还是不能正常显示`
-- ~~2023-03-22 - 为了解决上面的问题，直接重启了，于是会被直接引导到Windows（因为没有用OC引导替换原来的引导）~~`通过OpenCore Configurator将u盘efi分区覆盖硬盘efi分区，拔掉u盘后也能正常引导OC`
-- ~~2023-03-22 - 拔掉u盘后进入OC，但OC不能引导Windows~~`通过Windows镜像把Windows引导恢复了，又不能进入Mac啦，需要解决OC不能引导Windows的问题`
-- ~~2023-03-22 - OC不能引导Windows~~`使用EasyUEFI在Windows引导分区创建OC引导项，可以从硬盘引导OC再引导Windows和MacOS了，暂时不确定有没有更好的方法`
-- ~~2023-03-22 - 声卡暂时不能驱动~~`可以驱动`
-- 2023-03-22 - 有时拖动窗口时会导致死机重启
-- 2023-03-22 - 视频播放偶尔卡顿
-- 2023-03-22 - 副屏连接核显输出，系统加载前和刚关机时会大花屏；副屏最高选择60Hz刷新率
-- 2023-03-22 - USB定制可能还不完善 2023-07-30 - 需要参考大头蔡的视频完善USB定制
-- ~~2023-03-22 - 但👴只想摆烂，过几天再修😝~~
-- ~~2023-07-30 - 需要测试睡眠功能~~ `可以正常睡眠唤醒`
+- 通过Mac系统App Store下载`Ventura 13.6.7` iso 镜像，烧录u盘并安装
 
 ## 参考资料
 
