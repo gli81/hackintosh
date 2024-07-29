@@ -4,5 +4,6 @@
 2. 测试移除`SSDT-HEPT.aml`后能否继续正常工作
 3. 移除`AppleALCU.kext`，并完善`config.plist`
 4. 定制`SSDT-EC.aml`，找到是否需要USB供电
-5. 定制CPU管理`SSDT`
-6. 更换为OpenCore Release版
+5. 添加\`\`到`config.plist => ACPI => Patch`
+6. 定制CPU管理`SSDT`
+7. 更换为OpenCore Release版
