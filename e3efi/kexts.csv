@@ -1,0 +1,55 @@
+MacOS13,,,,
+ACPI,,,,
+,SSDT-PLUG.aml,,,
+,SSDT-EC.aml,,,
+,SSDT-HPET.aml,,,Not sure for now
+Drivers,,,,
+,HfsPlus.efi,,,
+,OpenRuntime.efi,,,
+,OpenCanopy.efi,,,for OC GUI
+Tool,,,,
+,OpenShell.efi,,,"Optional, enables shell for debugging"
+kexts,,,,
+,Lilu.kext,,,
+,VirtualSMC.kext,,,
+,SMCProcessor.kext,,,
+,SMCRadeonGPU.kext,,,
+,SMCSuperIO.kext,,,
+,WhateverGreen.kext,,,
+,AppleALC.kext,,,
+,RealtekRTL8111.kext,,,
+,USBPorts.kext,,,Fully customized for my machine
+,BlueToolFixup.kext,,,Patches BT for MacOS12+
+,AirportBrcmFixup.kext,,,
+,,AirPortBrcm4360_Injector.kext,,Disable this
+,,AirPortBrcmNIC_Injector.kext,,
+,BrcmFirmwareData.kext,,,
+,BrcmPatchRAM3.kext,,,
+,,,,
+MacOS11,,,,
+ACPI,,,,
+,SSDT-PLUG.aml,,,
+,SSDT-EC.aml,,,
+,SSDT-HPET.aml,,,Not sure for now
+Drivers,,,,
+,HfsPlus.efi,,,
+,OpenRuntime.efi,,,
+,OpenCanopy.efi,,,for OC GUI
+Tool,,,,
+,OpenShell.efi,,,"Optional, enables shell for debugging"
+kexts,,,,
+,Lilu.kext,,,
+,VirtualSMC.kext,,,
+,SMCProcessor.kext,,,
+,SMCRadeonGPU.kext,,,
+,SMCSuperIO.kext,,,
+,WhateverGreen.kext,,,
+,AppleALC.kext,,,
+,RealtekRTL8111.kext,,,
+,USBPorts.kext,,,Fully customized for my machine
+,AirportBrcmFixup.kext,,,
+,,AirPortBrcm4360_Injector.kext,,Disable this
+,,AirPortBrcmNIC_Injector.kext,,
+,BrcmFirmwareData.kext,,,
+,BrcmPatchRAM3.kext,,,
+,BrcmBluetoothInjector ,,,
