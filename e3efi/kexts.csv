@@ -2,7 +2,7 @@ MacOS13,,,,
 ACPI,,,,
 ,SSDT-PLUG.aml,,,
 ,SSDT-EC.aml,,,
-,SSDT-HPET.aml,,,Not sure for now
+,SSDT-HPET.aml,,,20250412 ChatGPT says not necessary will remove in next try
 Drivers,,,,
 ,HfsPlus.efi,,,
 ,OpenRuntime.efi,,,
@@ -30,7 +30,7 @@ MacOS11,,,,
 ACPI,,,,
 ,SSDT-PLUG.aml,,,
 ,SSDT-EC.aml,,,
-,SSDT-HPET.aml,,,Not sure for now
+,SSDT-HPET.aml,,,20250412 ChatGPT says not necessary will remove in next try
 Drivers,,,,
 ,HfsPlus.efi,,,
 ,OpenRuntime.efi,,,
