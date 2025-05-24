@@ -87,9 +87,9 @@
 - ~~2023-07-30 - 需要测试睡眠功能~~ `可以正常睡眠唤醒`
 - 2024-07-28 - 自定义picker不能使用
 - <del>2024-07-28 - 不确定是否需要`SSDT-HEPT`，根据OpenCore Guide， Haswell平台是不需要解决IRQ冲突问题的</del>2025-05-21`目前没问题`
-- <del>2024-07-28 - `AppleALCU.kext`为`AppleALC.kext`的精简版，可以移除</del> 2025-05-21
+- <del>2024-07-28 - `AppleALCU.kext`为`AppleALC.kext`的精简版，可以移除</del> `2025-05-21已移除`
 - 2025-05-21 - 核显没有被正确驱动
-- 2025-05-21 - 忘记删除Tools了
+- <del>2025-05-21 - 忘记删除Tools了</del> `2025-05-22 已移除`
 - 2025-05-21 - 不确定`Misc>Debug`中未按照OC Official Guide设置的三项有没有问题
 
 ### 更新记录

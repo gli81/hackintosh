@@ -1,4 +1,4 @@
 tools
 com.apple.recovery.boot
-config.plist
+#config.plist
 oldConfig.plist
