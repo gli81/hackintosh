@@ -123,14 +123,15 @@
 #### 2024-07-26~2024-07-28
 
 - 重复USB Mapping，获取`DSDT`和`SSDT`，配置EFI的过程
-- 通过Mac系统App Store下载`Ventura 13.6.7` iso 镜像，烧录u盘并安装
+- 通过Mac系统App Store下载`Ventura 13.6.7 (22G720)` iso 镜像，烧录u盘并安装
 
 #### 2025-05-20
 
-- 通过Mac系统App Store下载`Monterey 12.7.4 ()`  iso镜像，烧录u盘并安装
+- 通过Mac系统App Store下载`Monterey 12.7.4 (21h1123)`  iso镜像，烧录u盘并安装
 - 更换SMBIOS为`Macmini7,1`，该设备可以在`Monterey`驱动Haswell核显，且可以安装更新的OS
 - 根据OpenCore Official Guide设置`config.plist`开机后黑屏，设置`Misc > Debug`中 `AppleDebug=False`, `ApplePanic=False`, `Target=0`可以解决，参照[这篇文章](https://www.sleepycow.cc/amd-navi-gpu-random-black-screen-dp.html#anchor-7)
-- 安装`Monterey 12.7.4 ()`
+- 安装`Monterey 12.7.4 (21H1123)`
+- OTA更新至`Monterey 12.7.6 (21H1320)`
 - 使用`EasyUEFI`设置从硬盘双系统启动，教程参见[bilibili wxlei_雷 的视频](https://www.bilibili.com/video/BV1QV4y1K7WC)
 
 ## 参考资料
