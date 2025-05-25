@@ -16,6 +16,7 @@
     - Intro
     - Updates
     - Tests
+    - Problems
   - References
 
 ---
@@ -67,7 +68,7 @@
 - 网卡 - 11✅12✅13✅
 - 无线网卡
   - wifi - 11✅12✅13✅
-  - AirDrop - 11❌12❓13✅
+  - AirDrop - 11❌12✅13✅
   - 接力 - 11❌12✅13✅
 - 声卡 - 11✅12✅13✅
 - 睡眠 - 11✅12❓13✅
@@ -88,7 +89,8 @@
 - 2024-07-28 - 自定义picker不能使用
 - <del>2024-07-28 - 不确定是否需要`SSDT-HEPT`，根据OpenCore Guide， Haswell平台是不需要解决IRQ冲突问题的</del>2025-05-21`目前没问题`
 - <del>2024-07-28 - `AppleALCU.kext`为`AppleALC.kext`的精简版，可以移除</del> `2025-05-21已移除`
-- 2025-05-21 - 核显没有被正确驱动
+- 2025-05-21 - <del>核显在`Monterey`中没有被正确驱动</del>`2025-05-24核显可以被正确识别为P4600，但不能VDA解码`
+- 2025-05-24 - 核显不能在`Monterey`中硬解`2025-05-25大概率Monterey是不能支持的`
 - <del>2025-05-21 - 忘记删除Tools了</del> `2025-05-22 已移除`
 - 2025-05-21 - 不确定`Misc>Debug`中未按照OC Official Guide设置的三项有没有问题
 
@@ -122,17 +124,28 @@
 
 #### 2024-07-26~2024-07-28
 
-- 重复USB Mapping，获取`DSDT`和`SSDT`，配置EFI的过程
+- 重复USB Mapping，获取`DSDT`和`SSDT`，配置EFI的过程，选择SMBIOS`iMacPro1,1`
 - 通过Mac系统App Store下载`Ventura 13.6.7 (22G720)` iso 镜像，烧录u盘并安装
 
-#### 2025-05-20
+#### 2025-05-20~2025-05-23
 
 - 通过Mac系统App Store下载`Monterey 12.7.4 (21h1123)`  iso镜像，烧录u盘并安装
-- 更换SMBIOS为`Macmini7,1`，该设备可以在`Monterey`驱动Haswell核显，且可以安装更新的OS
+- 更换SMBIOS为`Macmini7,1`，该机型可以在`Monterey`驱动Haswell核显，且可以安装更新的OS
 - 根据OpenCore Official Guide设置`config.plist`开机后黑屏，设置`Misc > Debug`中 `AppleDebug=False`, `ApplePanic=False`, `Target=0`可以解决，参照[这篇文章](https://www.sleepycow.cc/amd-navi-gpu-random-black-screen-dp.html#anchor-7)
 - 安装`Monterey 12.7.4 (21H1123)`
 - OTA更新至`Monterey 12.7.6 (21H1320)`
 - 使用`EasyUEFI`设置从硬盘双系统启动，教程参见[bilibili wxlei_雷 的视频](https://www.bilibili.com/video/BV1QV4y1K7WC)
+
+#### 2025-05-24
+
+- 打开BIOS中的`IGD Multi Monitor`以启动核显，仿冒的P4600核显可以被识别但不能VDA解码
+
+- 更换SMBIOS为`iMac17,1`，该机型不是Haswell原生支持的SMBIOS，但原生包含核显和独显，但仿冒的P4600核显可以被识别但不能VDA解码
+
+#### 2025-??-??
+
+- 更换SMBIOS为`iMacPro1,1`并安装`Ventura`
+- 更换SMBIOS为`iMac15,1`并安装`Big Sur`
 
 ## 参考资料
 
