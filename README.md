@@ -33,7 +33,7 @@
 - [OpenCore Auxilliary Tool](https://github.com/ic005k/OCAuxiliaryTools)
 - [DiskGenius](https://www.diskgenius.cn/)
 - [sysin](https://sysin.org/)
-- ~~[IASL](https://acpica.org/)~~
+- [IASL](https://acpica.org/)
 
 ## E3v3的EFI
 
@@ -71,7 +71,7 @@
   - AirDrop - 11❌12✅13✅
   - 接力 - 11❌12✅13✅
 - 声卡 - 11✅12✅13✅
-- 睡眠 - 11✅12❓13✅
+- 睡眠 - 11✅12❓13❌
 
 ### 问题
 
@@ -89,8 +89,8 @@
 - 2024-07-28 - 自定义picker不能使用
 - <del>2024-07-28 - 不确定是否需要`SSDT-HEPT`，根据OpenCore Guide， Haswell平台是不需要解决IRQ冲突问题的</del>2025-05-21`目前没问题`
 - <del>2024-07-28 - `AppleALCU.kext`为`AppleALC.kext`的精简版，可以移除</del> `2025-05-21已移除`
-- 2025-05-21 - <del>核显在`Monterey`中没有被正确驱动</del>`2025-05-24核显可以被正确识别为P4600，但不能VDA解码`
-- 2025-05-24 - 核显不能在`Monterey`中硬解`2025-05-25大概率Monterey是不能支持的`
+- <del>2025-05-21 - 核显在`Monterey`中没有被正确驱动</del>`2025-05-24核显可以被正确识别为P4600，但不能VDA解码`
+- <del>2025-05-24 - 核显不能在`Monterey`中硬解</del>`2025-05-25大概率Monterey是不能支持的`
 - <del>2025-05-21 - 忘记删除Tools了</del> `2025-05-22 已移除`
 - 2025-05-21 - 不确定`Misc>Debug`中未按照OC Official Guide设置的三项有没有问题
 
@@ -130,6 +130,7 @@
 #### 2025-05-20~2025-05-23
 
 - 通过Mac系统App Store下载`Monterey 12.7.4 (21h1123)`  iso镜像，烧录u盘并安装
+- 更换显卡为AsRock RX6600XT
 - 更换SMBIOS为`Macmini7,1`，该机型可以在`Monterey`驱动Haswell核显，且可以安装更新的OS
 - 根据OpenCore Official Guide设置`config.plist`开机后黑屏，设置`Misc > Debug`中 `AppleDebug=False`, `ApplePanic=False`, `Target=0`可以解决，参照[这篇文章](https://www.sleepycow.cc/amd-navi-gpu-random-black-screen-dp.html#anchor-7)
 - 安装`Monterey 12.7.4 (21H1123)`
@@ -142,10 +143,10 @@
 
 - 更换SMBIOS为`iMac17,1`，该机型不是Haswell原生支持的SMBIOS，但原生包含核显和独显，但仿冒的P4600核显可以被识别但不能VDA解码
 
-#### 2025-??-??
+#### 2025-05-25~2025-05-26
 
-- 更换SMBIOS为`iMacPro1,1`并安装`Ventura`
-- 更换SMBIOS为`iMac15,1`并安装`Big Sur`
+- 更换SMBIOS为`iMacPro1,1`并安装`Ventura 13.7.6 (22H625)`，计划未来更换SMBIOS为`iMac15,1`并安装`Big Sur`
+- 重新定制USB映射，添加`-btlfxnvramcheck`到`boot-args`，重置nvram以解决蓝牙不能驱动的问题，其中一种方法解决了问题
 
 ## 参考资料
 
@@ -167,7 +168,7 @@
 - [OpenCore Auxilliary Tool](https://github.com/ic005k/OCAuxiliaryTools) - does ProperTree and GenSMBIOS things, with a better GUI
 - [DiskGenius](https://www.diskgenius.cn/) - moves your finished files to the efi sector in the USB stick
 - [sysin](https://sysin.org/) - provides MacOS images
-- ~~[IASL](https://acpica.org/)~~ - decompiles `.aml` file
+- [IASL](https://acpica.org/) - decompiles `.aml` file
 
 ## Intel Xeon E3 1276v3
 

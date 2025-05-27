@@ -8,5 +8,6 @@
 6. 定制CPU管理`kext`
 7. <del>找到检验核显正常工作的方式</del> `通过查看hackintool里的PCIe部分可以确定核显是否正常识别，通过hackintool主页能看到VDA是否正常工作，通过IORegistryMapper也能看到识别情况和驱动情况`
 7. <del>驱动核显</del>`暂时放弃`
+7. 找出蓝牙问题的解决的原因，`-btlfxnvramcheck`，重置nvram，`brcmfx-delay=3000`其中一个或没有任何一个，只是重新定制USB映射解决的
 8. 更换为OpenCore Release版
 
